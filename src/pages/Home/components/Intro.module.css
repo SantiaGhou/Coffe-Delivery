@@ -1,0 +1,88 @@
+.intro{
+width: 100%;
+height: 544px;
+padding: 92px 160px;
+display: flex;
+justify-content: center;
+gap: 80px;
+}
+
+.TextItems{
+    display: flex;
+    flex-direction: column;
+    max-width: 588px;
+}
+
+.title {
+  font-family: var(--font-primary);
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 130%;
+    
+}
+.paragraph {
+    font-family: var(--font-secondary);
+    color: var(--base-subtitle);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 130%;
+    margin-top: 16px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  margin-top: 40px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  font-family: var(--font-secondary);
+  color: var(--base-text);
+  transition: 0.3s;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  color: white;
+}
+
+
+.yellowDark {
+  background-color: var(--yellow-dark);
+}
+
+.yellow {
+  background-color: var(--yellow);
+}
+
+.baseText {
+  background-color: var(--base-text);
+}
+
+.purple {
+  background-color: var(--purple);
+}
+
+.image {
+  width: 476px;
+  height: 360px;
+  transition: 0.2s;
+}
+
+.listItem:hover {
+  transform: scale(1.05);
+
+}
+
+.image:hover {
+  transform: scale(1.05);
+}
