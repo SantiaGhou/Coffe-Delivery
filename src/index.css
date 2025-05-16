@@ -1,12 +1,19 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-secondary);
+}
+
+
 :root {
 
-  --font-primary: 'Baloo 2', sans-serif;
+  --font-primary: 'Baloo 2', cursive;
   --font-secondary: 'Roboto', sans-serif;
 
   --yellow-dark: #C47F17;
   --yellow: #DBAC2C;
   --yellow-light: #F1E9C9;
-
   --purple-dark: #4B2995;
   --purple: #8047F8;
   --purple-light: #EBE5F9;

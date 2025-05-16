@@ -1,0 +1,67 @@
+.header {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: 1120px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logoText {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--base-subtitle);
+  line-height: 1.2;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.location {
+  background: var(--purple-light);
+  color: var(--purple-dark);
+  padding: 0.5rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  transition: 0.3s;
+}
+
+.cart {
+  background: var(--yellow-light);
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.location:hover {
+    background-color: #e0d2ff;
+}
+
+.cart:hover {
+  background: var(--yellow);
+  color: white;
+  transform: scale(1.2);
+}
+
