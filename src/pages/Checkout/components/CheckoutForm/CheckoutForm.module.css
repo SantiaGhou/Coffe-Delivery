@@ -1,0 +1,100 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: transparent;
+}
+
+.box {
+  background: var(--base-card);
+  padding: 2.5rem;
+  border-radius: 6px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.header h4 {
+  font-size: 1rem;
+  color: var(--base-subtitle);
+}
+
+.header span {
+  font-size: 0.875rem;
+  color: var(--base-text);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.full {
+  width: 100%;
+}
+
+.cep {
+  width: 12.5rem;
+}
+
+.uf {
+  width: 3.75rem;
+}
+
+.optional::placeholder {
+  font-style: italic;
+}
+
+input {
+  background: var(--base-input);
+  border: 1px solid var(--base-button);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: var(--base-text);
+  width: 100%;
+}
+
+.paymentMethods {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.paymentMethods button {
+  flex: 1;
+  background: var(--base-button);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 0.75rem;
+  color: var(--base-text);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.paymentMethods button:hover {
+  background: var(--base-hover);
+}
+
+
+.active {
+  border: 1.5px solid var(--purple);
+  background: var(--purple-light);
+  color: var(--purple-dark);
+  box-shadow: 0 0 0 2px var(--purple-light);
+}

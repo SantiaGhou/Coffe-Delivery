@@ -1,0 +1,103 @@
+.container {
+  background: var(--base-card);
+  padding: 2.5rem;
+  border-radius: 6px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.coffeeItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border-bottom: 1px solid var(--base-button);
+  padding-bottom: 1.5rem;
+}
+
+.coffeeItem img {
+  width: 64px;
+  height: 64px;
+}
+
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.details span {
+  color: var(--base-subtitle);
+  font-size: 1rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.quantity {
+  background: var(--base-button);
+  padding: 0.5rem;
+  border-radius: 6px;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.quantity button {
+  background: transparent;
+  border: none;
+  color: var(--purple);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.remove {
+  background: var(--base-button);
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: var(--base-text);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.total {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.total div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totalFinal {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--base-subtitle);
+}
+
+.confirm {
+  background: var(--yellow);
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.confirm:hover {
+  background: var(--yellow-dark);
+}
