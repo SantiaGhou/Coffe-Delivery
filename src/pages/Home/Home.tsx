@@ -1,4 +1,5 @@
 import { Header } from '../../components/Header'
+import { Coffees } from './components/Coffes'
 import { Intro } from './components/Intro'
 
 export function Home() {
@@ -6,6 +7,7 @@ export function Home() {
     <div>
       <Header />
       <Intro />
+      <Coffees />
     </div>
   )
 }

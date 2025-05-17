@@ -1,0 +1,108 @@
+.card {
+  background-color: var(--base-card);
+  border-radius: 6px 36px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.image {
+  width: 120px;
+  height: 120px;
+  margin-top: -2.5rem;
+}
+
+.tags {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0.75rem;
+  font-family: var(--font-secondary);
+}
+
+.tag {
+  background-color: var(--yellow-light);
+  color: var(--yellow-dark);
+  font-size: 0.625rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 100px;
+  padding: 0.25rem 0.5rem;
+}
+
+.name {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  color: var(--base-subtitle);
+  margin-top: 1rem;
+}
+
+.description {
+  font-size: 0.875rem;
+  font-family: var(--font-secondary);
+  color: var(--base-label);
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 0.875rem;
+  color: var(--base-text);
+}
+
+.price strong {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: var(--font-primary);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.quantity {
+  display: flex;
+  background: var(--base-button);
+  padding: 0.5rem;
+  border-radius: 6px;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-secondary);
+}
+
+.quantity button {
+  background: transparent;
+  border: none;
+  color: var(--purple);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.cartButton {
+  background: var(--purple-dark);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cartButton:hover {
+  background: var(--purple);
+}

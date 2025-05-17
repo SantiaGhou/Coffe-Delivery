@@ -1,6 +1,6 @@
 import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react'
 import styles from './Intro.module.css'
-import Typed from 'typed.js' // Adicionando a biblioteca Typed.js
+import Typed from 'typed.js' 
 import { useEffect, useRef } from 'react'
 
 export function Intro() {
@@ -9,10 +9,10 @@ export function Intro() {
   useEffect(() => {
     const options = {
       strings: [
-        'para qualquer hora do dia',
-        'Para qualquer dia',
-        'Para qualquer momento',
-        'Para onde estiver'
+        'Alegrar',
+        'O seu Dia',
+        'Desenvolver',
+        'Você'
       ],
       typeSpeed: 50,
       backSpeed: 30,
@@ -37,7 +37,7 @@ export function Intro() {
       <div className={styles.TextItems}>
         {/* Título e parágrafo */}
         <div>
-          <h1 className={styles.title}>Encontre o café perfeito <span className="typed-text"></span></h1>
+          <h1 className={styles.title}>Encontre o café perfeito para <span className="typed-text"></span></h1>
           <p className={styles.paragraph}>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</p>
         </div>
 
