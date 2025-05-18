@@ -16,7 +16,7 @@ export function CheckoutForm() {
           </div>
         </div>
 
-        <form className={styles.form}>
+        <div className={styles.form}>
           <input type="text" placeholder="CEP" className={styles.cep} />
           <input type="text" placeholder="Rua" className={styles.full} />
           <div className={styles.row}>
@@ -28,7 +28,7 @@ export function CheckoutForm() {
             <input type="text" placeholder="Cidade" />
             <input type="text" placeholder="UF" className={styles.uf} />
           </div>
-        </form>
+        </div>
       </div>
 
       {/* Pagamento */}

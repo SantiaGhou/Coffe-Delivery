@@ -1,0 +1,23 @@
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  color: var(--white);
+  border-radius: 50%;
+  padding: 0.6rem;
+  font-size: 1.25rem;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+}
+
+.item strong {
+  font-weight: 700;
+  color: var(--base-title);
+}

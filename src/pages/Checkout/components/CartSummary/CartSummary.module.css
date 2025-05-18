@@ -65,8 +65,12 @@
   gap: 0.25rem;
   border: none;
   cursor: pointer;
+  transition: 0.2s;
 }
-
+.remove:hover {
+  background: var(--base-hover);
+  color: red;
+}
 .total {
   display: flex;
   flex-direction: column;
@@ -95,9 +99,10 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: 0.4s;
 }
 
 .confirm:hover {
+  transform: scale(1.1);
   background: var(--yellow-dark);
 }

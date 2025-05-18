@@ -63,6 +63,13 @@ input {
   font-size: 0.875rem;
   color: var(--base-text);
   width: 100%;
+  transition: 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid var(--purple);
+ box-shadow: 0 0 4px var(--purple-light);
 }
 
 .paymentMethods {
@@ -71,7 +78,7 @@ input {
   margin-top: 2rem;
 }
 
-.paymentMethods button {
+.paymentButton {
   flex: 1;
   background: var(--base-button);
   border: 1px solid transparent;
@@ -87,7 +94,7 @@ input {
   transition: 0.2s;
 }
 
-.paymentMethods button:hover {
+.paymentButton:hover {
   background: var(--base-hover);
 }
 
