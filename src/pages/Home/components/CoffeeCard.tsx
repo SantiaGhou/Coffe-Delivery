@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ShoppingCartSimple } from 'phosphor-react';
 import styles from './CoffeeCard.module.css';
+import { useOrder } from '../../../contexts/OrderContext';
 
 interface CoffeeProps { 
   coffee: {
@@ -15,13 +16,23 @@ interface CoffeeProps {
 
 export function CoffeeCard({ coffee }: CoffeeProps) {
   const [quantity, setQuantity] = useState(1);
+  const { order, setCart } = useOrder();
 
-  const handleIncrease = () => {
-    setQuantity((prev) => prev + 1);
-  };
+  const handleIncrease = () => setQuantity((prev) => prev + 1);
+  const handleDecrease = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
-  const handleDecrease = () => {
-    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+  const handleAddToCart = () => {
+    const exists = order.cart.find(item => item.id === coffee.id);
+    if (exists) {
+      setCart(order.cart.map(item =>
+        item.id === coffee.id
+          ? { ...item, quantity: item.quantity + quantity }
+          : item
+      ));
+    } else {
+      setCart([...order.cart, { ...coffee, quantity }]);
+    }
+    setQuantity(1);
   };
 
   return (
@@ -51,7 +62,7 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
             <span>{quantity}</span>
             <button onClick={handleIncrease}>+</button>
           </div>
-          <button className={styles.cartButton}>
+          <button className={styles.cartButton} onClick={handleAddToCart}>
             <ShoppingCartSimple size={22} weight="fill" />
           </button>
         </div>

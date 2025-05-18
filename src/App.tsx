@@ -1,9 +1,10 @@
-import  Routes  from "./Routes";
+import { OrderProvider } from './contexts/OrderContext';
+import Routes from './Routes';
 
 export function App() {
   return (
-    <div className="App">
+    <OrderProvider>
       <Routes />
-    </div>
+    </OrderProvider>
   );
 }

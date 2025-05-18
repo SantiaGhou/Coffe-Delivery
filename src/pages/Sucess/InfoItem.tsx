@@ -1,5 +1,5 @@
+import { type ReactNode } from 'react'
 import styles from './InfoItem.module.css'
-import type { ReactNode } from 'react'
 
 interface InfoItemProps {
   icon: ReactNode

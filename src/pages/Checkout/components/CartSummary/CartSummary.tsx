@@ -1,58 +1,58 @@
 import styles from './CartSummary.module.css'
 import { Trash } from 'phosphor-react'
-import { coffees } from '../../../../data/coffees'
+import { useOrder } from '../../../../contexts/OrderContext'
+import { useNavigate } from 'react-router-dom'
+
 export function CartSummary() {
-  // Exemplo: pegando o expresso e o latte do array
-  const expresso = coffees.find(c => c.name === 'Expresso Tradicional')
-  const latte = coffees.find(c => c.name === 'Latte')
+  const { order, setCart } = useOrder()
+  const navigate = useNavigate()
+
+  function handleQuantity(id: number, delta: number) {
+    setCart(
+      order.cart.map(item =>
+        item.id === id
+          ? { ...item, quantity: Math.max(1, item.quantity + delta) }
+          : item
+      )
+    )
+  }
+
+  function handleRemove(id: number) {
+    setCart(order.cart.filter(item => item.id !== id))
+  }
+
+  const total = order.cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
   return (
     <div className={styles.container}>
-      <div className={styles.coffeeItem}>
-        <img src={expresso?.image} alt="Expresso" />
-        <div className={styles.details}>
-          <span>{expresso?.name}</span>
-          <div className={styles.actions}>
-            <div className={styles.quantity}>
-              <button>-</button>
-              <span>1</span>
-              <button>+</button>
+      {order.cart.map(item => (
+        <div className={styles.coffeeItem} key={item.id}>
+          <img src={item.image} alt={item.name} />
+          <div className={styles.details}>
+            <span>{item.name}</span>
+            <div className={styles.actions}>
+              <div className={styles.quantity}>
+                <button onClick={() => handleQuantity(item.id, -1)}>-</button>
+                <span>{item.quantity}</span>
+                <button onClick={() => handleQuantity(item.id, 1)}>+</button>
+              </div>
+              <button className={styles.remove} onClick={() => handleRemove(item.id)}>
+                <Trash size={16} />
+                REMOVER
+              </button>
             </div>
-            <button className={styles.remove}>
-              <Trash size={16} />
-              REMOVER
-            </button>
           </div>
+          <strong>R$ {(item.price * item.quantity).toFixed(2).replace('.', ',')}</strong>
         </div>
-        <strong>R$ {expresso?.price.toFixed(2).replace('.', ',')}</strong>
-      </div>
-
-      <div className={styles.coffeeItem}>
-        <img src={latte?.image} alt="Latte" />
-        <div className={styles.details}>
-          <span>{latte?.name}</span>
-          <div className={styles.actions}>
-            <div className={styles.quantity}>
-              <button>-</button>
-              <span>1</span>
-              <button>+</button>
-            </div>
-            <button className={styles.remove}>
-              <Trash size={16} />
-              REMOVER
-            </button>
-          </div>
-        </div>
-        <strong>R$ {latte?.price.toFixed(2).replace('.', ',')}</strong>
-      </div>
-
+      ))}
       <div className={styles.total}>
-        <div><span>Total de itens</span><span>R$ 29,70</span></div>
+        <div><span>Total de itens</span><span>R$ {total.toFixed(2).replace('.', ',')}</span></div>
         <div><span>Entrega</span><span>R$ 3,50</span></div>
-        <div className={styles.totalFinal}><span>Total</span><span>R$ 33,20</span></div>
+        <div className={styles.totalFinal}><span>Total</span><span>R$ {(total + 3.5).toFixed(2).replace('.', ',')}</span></div>
       </div>
-
-      <button className={styles.confirm}>CONFIRMAR PEDIDO</button>
+      <button className={styles.confirm} onClick={() => navigate('/sucess')}>
+        CONFIRMAR PEDIDO
+      </button>
     </div>
   )
 }
